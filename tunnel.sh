@@ -2,11 +2,11 @@
 
 tunnel_chk() {
 
-    # Your Individual Informations.
-    PEM_LOC="{your_pem_location}"
-    ID="{access_ID}"
-    ADDR="{access_Addr}"
-    PORT="{access_Port}"
+    # Your Individual SSH Connection Inf.
+    PEM_LOC="/path/to/pem/login.pem"
+    ID="exampleID"
+    ADDR="exampleAddr.com"
+    PORT="22"
 
     if [ $1 = "L" ]; then
         foo="$(nc localhost $2 -z -w$5)"
@@ -23,6 +23,7 @@ tunnel_chk() {
     fi
 }
 
-# usage
+# Usage
 # tunnel_chk L/R port:host:port timeout_interval
+# You can add multiple lines of this functions: SSH tunneling connections.
 tunnel_chk R 2222 localhost 22 5
