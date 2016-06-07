@@ -6,9 +6,9 @@ This scripts check whether port connection is open (in periodically, if you use 
 
 Steps to Use this Scirpts.
 
-1. Clone tunnel.sh to your directory.
+## 1. Clone tunnel.sh to your directory.
 
-2. Replace with your informations.
+## 2. Replace with your informations.
 
     // Inside of tunnel.sh
     // Your Individual Informations.
@@ -18,11 +18,11 @@ Steps to Use this Scirpts.
     ADDR="{access_Addr}"
     PORT="{access_Port}"    
 
-3. Give execution permission
+## 3. Give execution permission
 
     $ chmod a+x /path/to/your/dir/tunnel.sh 
 
-4. Crontab settings.
+## 4. Crontab settings.
 
 Setting this scripts will execute in periodically.
 
@@ -32,6 +32,6 @@ Setting this scripts will execute in periodically.
     * * * * * /bin/bash /path/to/your/dir/tunnel.sh
     # or other periods.
 
-5. Check whether your tunneling is alive.
+## 5. Check whether your tunneling is alive.
     $ ps -ef | grep port:addr:port
 
