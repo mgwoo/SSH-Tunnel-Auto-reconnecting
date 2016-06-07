@@ -3,6 +3,7 @@
 There are not tools or scripts that automatically reconnect SSH Tunneling. 
 Autossh connection is broken in a few times when run in more than 3 or 4 days.
 This scripts check whether port connection is open (in periodically, if you use Crontab) by using nc command. If tunneling is broken, then kill SSH process and retunneling.
+This script is intended for LINUX environment, and needs PEM logins.
 
 Steps to Use this Scirpts.
 
