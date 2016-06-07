@@ -7,10 +7,11 @@ This scripts check whether port connection is open (in periodically, if you use 
 Steps to Use this Scirpts.
 
 1. Clone tunnel.sh to your directory.
+
 2. Replace with your informations.
 
-    # tunnel.sh
-    # Your Individual Informations.
+    // Inside of tunnel.sh
+    // Your Individual Informations.
 
     PEM_LOC="{your_pem_location}"
     ID="{access_ID}"
