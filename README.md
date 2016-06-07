@@ -6,7 +6,8 @@ This scripts check whether port connection is open (in periodically, if you use 
 
 Steps to Use this Scirpts.
 
-## 1. Clone tunnel.sh to your directory.
+## 1. Clone to your directory.
+    $ git clone https://github.com/idantity/SSH-Tunnel-Auto-reconnecting.git
 
 ## 2. Replace with your informations.
 
