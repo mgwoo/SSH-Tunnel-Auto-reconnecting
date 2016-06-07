@@ -1,13 +1,13 @@
 #!/bin/bash
 
 tunnel_chk() {
+
+    # Your Individual Informations.
     PEM_LOC="{your_pem_location}"
     ID="{access_ID}"
     ADDR="{access_Addr}"
     PORT="{access_Port}"
 
-#    nc -z -v -w5 dorm.heak.xyz 3390
-    
     if [ $1 = "L" ]; then
         foo="$(nc localhost $2 -z -w$5)"
         if [ $? != 0 ]; then # port is close
@@ -23,5 +23,6 @@ tunnel_chk() {
     fi
 }
 
-# tunnel_chk L/R port:host:port timeout
-tunnel_chk R 2223 localhost 22 5
+# usage
+# tunnel_chk L/R port:host:port timeout_interval
+tunnel_chk R 2222 localhost 22 5
