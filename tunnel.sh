@@ -2,23 +2,29 @@
 
 tunnel_chk() {
 
-    # Your Individual SSH Connection Inf.
-    PEM_LOC="/path/to/pem/login.pem"
-    ID="exampleID"
-    ADDR="exampleAddr.com"
+    # Your Individual SSH Connection Info.
+	# PEM_LOC is optional parameter for SSH login.
+    PEM_LOC="/path/to/your/pem/login.pem"
+    ID="yourID"
+    ADDR="home.address.com"
     PORT="22"
 
+    PEMSTR=""
+    if [ -n "$PEM_LOC" ]; then
+        PEMSTR="-i $PEM_LOC"
+    fi
+
     if [ $1 = "L" ]; then
-        foo="$(nc localhost $2 -z -w$5)"
+        foo="$(echo > /dev/tcp/localhost/$2)"
         if [ $? != 0 ]; then # port is close
             bar="$(pkill -f $2:$3:$4)"
-            ssh -i $PEM_LOC -fN -L $2:$3:$4 $ID@$ADDR -p $PORT
+            ssh -fN $PEMSTR -L $2:$3:$4 $ID@$ADDR -p $PORT
         fi
     else
-        foo="$(nc $ADDR $2 -z -w$5)"       
+        foo="$(echo > /dev/tcp/$ADDR/$2)"
         if [ $? != 0 ]; then # port is close
             bar="$(pkill -f $2:$3:$4)"
-            ssh -i $PEM_LOC -fN -R $2:$3:$4 $ID@$ADDR -p $PORT
+            ssh -fN $PEMSTR -R $2:$3:$4 $ID@$ADDR -p $PORT
         fi
     fi
 }
